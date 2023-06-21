@@ -1,16 +1,20 @@
 function reverseString(str){
-    let newString = str;
-    let strary = str.split();
-    console.log(strary);
-    for(let i =str.length-1; i>=0; i++){
+    let reversedStr = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+      reversedStr += str[i];
     }
-    return newString;
+    return reversedStr;
 }
 
 function isPalindrome(str){
-
+    const len = str.length;
+    for (let i = 0; i < len / 2; i++) {
+      if (str[i] !== str[len - 1 - i]) {
+        return false;
+      }
+    }
+    return true;
 }
-console.log(reverseString("Hello"));
 
 
 module.exports = {reverseString, isPalindrome};
